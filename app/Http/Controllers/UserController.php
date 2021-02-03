@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Guest;
 use App\User;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
@@ -13,6 +14,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function list_people(){
+        $people = Guest::paginate(6);
+
+        return view('people.index',compact('people'));
+    }
     public function index()
     {
          $users = User::paginate(6);

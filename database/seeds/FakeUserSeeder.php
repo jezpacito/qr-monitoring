@@ -14,6 +14,11 @@ class FakeUserSeeder extends Seeder
     {
         $users =factory(User::class, 5)->create();
 
+        $admin =factory(User::class)->create([
+            'email' => 'admin@gmail.com'
+        ]);
+        $admin->assignRole('admin');
+
         foreach ($users as $user){
             $user->assignRole('admin');
         }

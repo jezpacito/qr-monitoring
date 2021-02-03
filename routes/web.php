@@ -15,31 +15,27 @@ use Barryvdh\DomPDF\Facade as PDF;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    Route::get('/guest/registration','GuestController@guest_form_regis');
+//
+//});\
+
+Route::get('/','GuestController@guest_form_regis');
 
 \Illuminate\Support\Facades\Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('user', 'UserController');
+Route::resource('/user', 'UserController');
+
+Route::get('/people', 'UserController@list_people');
+
 Route::get('dataTableUSer', 'UserController@dataTable')->name('dataTableUser');
 
 Route::view('/profile','profile');
-Route::get('/generate123', function () {
 
-    $file_no = mt_rand(100000000000, 999999999999).'.'.'svg';
-  $qr=  QrCode::size(500)
-        ->format('png')
-        ->generate('ItSolutionStuff.com', public_path('QR/test.png'));
+Route::view('/registration','guest-register');
 
+Route::post('/register/guest','GuestController@register');
 
-//
-    $pdf = PDF::loadView('qrCode')->setPaper('legal','portrait');
-
-    return $pdf->stream();
-//    return view('qrCode');
-
-});
-Route::get('/qrCard','GuestController@card');
+Route::get('/qrCard','GuestController@download_stream_pdf');

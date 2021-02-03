@@ -37,9 +37,14 @@
       </div>
     </li>
 
-
+      <li class="nav-item">
+          <a class="nav-link" href="/people">
+              <i class="ni ni-circle-08 text-pink"></i>
+              <span class="nav-link-text">Registered People</span>
+          </a>
+      </li>
     <li class="nav-item">
-      <a class="nav-link" href="examples/register.html">
+      <a class="nav-link" href="/#">
         <i class="ni ni-circle-08 text-pink"></i>
         <span class="nav-link-text">Register Employee</span>
       </a>
