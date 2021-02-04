@@ -86,7 +86,12 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-first-name">First name</label>
-                                            <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="" name="fname">
+                                            <input type="text" id="input-first-name" class="form-control @error('fname') is-invalid @enderror" placeholder="First name" value="" name="fname">
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                 <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-lg-6">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Guest;
+use App\Http\Requests\GuestFormRequest;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -13,7 +14,7 @@ class GuestController extends Controller
     public function guest_form_regis(){
         return view('guest-register');
     }
-    public function register(Request $request){
+    public function register(GuestFormRequest $request){
 
         $qr_code = mt_rand(100000000000, 999999999999);
         if(Guest::where('qr_code',$qr_code.'png')->exists()){
