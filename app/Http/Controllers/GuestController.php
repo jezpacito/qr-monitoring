@@ -26,7 +26,6 @@ class GuestController extends Controller
         $guest->qr_code = $qr_code.'.png';
         $guest->save();
 
-        dd('test');
         $qr=  QrCode::size(500)
             ->format('png')
             ->generate($qr_code, public_path('QR/'.$qr_code.'.png'));

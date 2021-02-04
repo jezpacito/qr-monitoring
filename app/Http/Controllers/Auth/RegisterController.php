@@ -76,10 +76,10 @@ class RegisterController extends Controller
     }
     public function showRegistrationForm()
     {
-        if (!Auth::check()){
-            return 'not allowed';
-//            return redirect()->back()->with('error', 'NOT ALLOWED!');
-        }
+//        if (!Auth::check()){
+//            return 'not allowed';
+////            return redirect()->back()->with('error', 'NOT ALLOWED!');
+//        }
         return view('auth.register');
     }
     public function register(Request $request)
