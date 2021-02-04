@@ -16,6 +16,7 @@ class GuestController extends Controller
     }
     public function register(GuestFormRequest $request){
 
+
         $qr_code = mt_rand(100000000000, 999999999999);
         if(Guest::where('qr_code',$qr_code.'png')->exists()){
             $qr_code = mt_rand(100000000000, 999999999999);
@@ -24,6 +25,8 @@ class GuestController extends Controller
         $guest = new Guest($request->all());
         $guest->qr_code = $qr_code.'.png';
         $guest->save();
+
+        dd('test');
         $qr=  QrCode::size(500)
             ->format('png')
             ->generate($qr_code, public_path('QR/'.$qr_code.'.png'));
