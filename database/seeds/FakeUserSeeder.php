@@ -24,16 +24,16 @@ class FakeUserSeeder extends Seeder
         ]);
         $user->assignRole('admin');
 
-//        $users =factory(User::class, 5)->create();
-//        $admin =factory(User::class)->create([
-//            'email' => 'admin@gmail.com',
-//            'password' => \Illuminate\Support\Facades\Hash::make('12345678')
-//        ]);
-//        $admin->assignRole('admin');
-
-//        foreach ($users as $user){
-//            $user->assignRole('admin');
-//        }
+        $staff= \App\User::create([
+            'gender' =>1,
+            'contact_no' =>'0976452121',
+            'address' =>'General Santos City',
+            'lname' =>'Doe',
+            'fname'=>'Jane',
+            'email' => 'employee@gmail.com',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        ]);
+        $staff->assignRole('staff');
 
     }
 }

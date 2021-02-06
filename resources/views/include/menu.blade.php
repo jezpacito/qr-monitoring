@@ -7,48 +7,76 @@
         <span class="nav-link-text">Dashboard</span>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('user.index') }}">
-        <i class="ni ni-planet text-orange"></i>
-        <span class="nav-link-text">CSU List</span>
-      </a>
-    </li>
-      <li class="nav-item">
-          <a class="nav-link" href="examples/tables.html">
-              <i class="ni ni-bullet-list-67 text-default"></i>
-              <span class="nav-link-text">List of Employees</span>
-          </a>
-      </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-        aria-expanded="false">
-        <i class="ni ni-pin-3 text-primary"></i>
-        <span class="nav-link-text">Generate Report</span>
-      </a>
-      <div class="dropdown-menu">
-        <a href="#" class="nav-link">
-          <i class="ni ni-single-02 text-yellow"></i>
-          <span class="nav-link-text">Monthly Report</span>
-        </a>
-        <a href="#" class="nav-link">
-          <i class="ni ni-single-02 text-yellow"></i>
-          <span class="nav-link-text">Weekly Report</span>
-        </a>
-      </div>
-    </li>
+{{--    <li class="nav-item">--}}
+{{--      <a class="nav-link" href="{{ route('user.index') }}">--}}
+{{--        <i class="ni ni-planet text-orange"></i>--}}
+{{--        <span class="nav-link-text">Employee List</span>--}}
+{{--      </a>--}}
+{{--    </li>--}}
+{{--      <li class="nav-item">--}}
+{{--          <a class="nav-link" href="examples/tables.html">--}}
+{{--              <i class="ni ni-bullet-list-67 text-default"></i>--}}
+{{--              <span class="nav-link-text">List of Employees</span>--}}
+{{--          </a>--}}
+{{--      </li>--}}
 
-      <li class="nav-item">
-          <a class="nav-link" href="/people">
-              <i class="ni ni-circle-08 text-pink"></i>
-              <span class="nav-link-text">Registered People</span>
-          </a>
-      </li>
     <li class="nav-item">
       <a class="nav-link" href="/#">
         <i class="ni ni-circle-08 text-pink"></i>
-        <span class="nav-link-text">Register Employee</span>
+        <span class="nav-link-text">Add Employee</span>
       </a>
-    </li>
+
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+             aria-expanded="false">
+              <i class="ni ni-circle-08 text-primary"></i>
+              <span class="nav-link-text">User List</span>
+          </a>
+          <div class="dropdown-menu">
+              <a href="#" class="nav-link">
+                  <i class="ni ni-circle-08 text-yellow"></i>
+                  <span class="nav-link-text">Admin</span>
+              </a>
+              <a href="#" class="nav-link">
+                  <i class="ni ni-single-02 text-yellow"></i>
+                  <span class="nav-link-text">Employee</span>
+              </a>
+          </div>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+             aria-expanded="false">
+              <i class="ni ni-books text-primary"></i>
+              <span class="nav-link-text">Generate Report</span>
+          </a>
+          <div class="dropdown-menu">
+              <a href="#" class="nav-link">
+                  <i class="ni ni-single-02 text-yellow"></i>
+                  <span class="nav-link-text">Monthly Report</span>
+              </a>
+              <a href="#" class="nav-link">
+                  <i class="ni ni-single-02 text-yellow"></i>
+                  <span class="nav-link-text">Weekly Report</span>
+              </a>
+          </div>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+             aria-expanded="false">
+              <i class="ni ni-box-2 text-primary"></i>
+              <span class="nav-link-text">Guest List</span>
+          </a>
+          <div class="dropdown-menu">
+              <a href="#" class="nav-link">
+                  <i class="ni ni-single-02 text-yellow"></i>
+                  <span class="nav-link-text">Newly Registered</span>
+              </a>
+              <a href="#" class="nav-link">
+                  <i class="ni ni-single-02 text-yellow"></i>
+                  <span class="nav-link-text">Weekly Report</span>
+              </a>
+          </div>
+      </li>
 
   </ul>
   <!-- Divider -->
