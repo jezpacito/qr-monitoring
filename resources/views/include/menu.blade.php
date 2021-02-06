@@ -20,12 +20,13 @@
 {{--          </a>--}}
 {{--      </li>--}}
 
-    <li class="nav-item">
-      <a class="nav-link" href="/#">
-        <i class="ni ni-circle-08 text-pink"></i>
-        <span class="nav-link-text">Add Employee</span>
-      </a>
+{{--    <li class="nav-item">--}}
+{{--      <a class="nav-link" href="/register">--}}
+{{--        <i class="ni ni-circle-08 text-pink"></i>--}}
+{{--        <span class="nav-link-text">Add Employee</span>--}}
+{{--      </a>--}}
 
+      @role('admin')
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
              aria-expanded="false">
@@ -33,16 +34,21 @@
               <span class="nav-link-text">User List</span>
           </a>
           <div class="dropdown-menu">
-              <a href="#" class="nav-link">
+              <a href="/admin" class="nav-link">
                   <i class="ni ni-circle-08 text-yellow"></i>
                   <span class="nav-link-text">Admin</span>
               </a>
-              <a href="#" class="nav-link">
+              <a href="/employee" class="nav-link">
                   <i class="ni ni-single-02 text-yellow"></i>
                   <span class="nav-link-text">Employee</span>
               </a>
+              <a href="/user" class="nav-link">
+                  <i class="ni ni-single-02 text-yellow"></i>
+                  <span class="nav-link-text">All User</span>
+              </a>
           </div>
       </li>
+      @endrole
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
              aria-expanded="false">

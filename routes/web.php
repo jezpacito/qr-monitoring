@@ -35,7 +35,10 @@ Route::get('dataTableUSer', 'UserController@dataTable')->name('dataTableUser');
 
 Route::view('/profile','profile');
 
-Route::view('/registration','guest-register');
+Route::get('/employee','UserController@employee')->name('user.employee');
+
+Route::get('/admin','UserController@admin');
+
 
 Route::post('/register/guest','GuestController@register')->name('guest');
 

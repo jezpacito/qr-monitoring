@@ -20,6 +20,16 @@ class UserController extends Controller
 
         return view('people.index',compact('people'));
     }
+    public function employee()
+    {
+        $users = User::role('staff')->paginate(6);
+        return view('user.index-emp', compact('users'));
+    }
+    public function admin()
+    {
+        $users = User::role('admin')->paginate(6);
+        return view('user.index', compact('users'));
+    }
     public function index()
     {
          $users = User::paginate(6);
@@ -69,8 +79,9 @@ class UserController extends Controller
     {
         $input = $request->all();
         $input['password'] = bcrypt($request->password);
-        User::create($input);
-        return redirect()->route('user.index')->with('success', 'Created Successfully!');;
+        $user = User::create($input);
+        $user->assignRole('staff');
+        return redirect()->route('user.employee')->with('success', 'Created Successfully!');;
     }
 
     /**

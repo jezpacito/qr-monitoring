@@ -1,37 +1,127 @@
-@extends('layouts.argon')
-
+@extends('layouts.table')
 @section('content')
-<div class="card">
-  <div class="card-header">
-    <h3 class="mb-0">Detalles usuario</h3>
-  </div>
-  <div class="card-body">
-    <div class="mb-2">
-      <table class="table table-bordered table-striped">
-        <tbody>
-          <tr>
-            <th> ID </th>
-            <td> {{ $user->id }} </td>
-          </tr>
-          <tr>
-            <th> Nombre </th>
-            <td> {{ $user->name }} </td>
-          </tr>
-          <tr>
-            <th> E-mail </th>
-            <td> {{ $user->email }} </td>
-          </tr>
-          <tr>
-            <th> Roles </th>
-            <td>
-              <span class="badge badge-info">Admin</span>
-              {{-- <span class="label label-info label-many">Admin</span> --}}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <a class="btn btn-sm btn-default" href="{{ route('user.index') }}">Volver</a>
-  </div>
-</div>
+    <div class="container-fluid mt--6">
+        <div class="row">
+            <div class="col-xl-4 order-xl-2">
+                <div class="card card-profile">
+                    <img src="../assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 order-lg-2">
+                            <div class="card-profile-image">
+                                <a href="#">
+                                    <img src="../assets/img/theme/ava.jpg" class="rounded-circle">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                        <div class="d-flex justify-content-between">
+                            <a href="#" class="btn   mr-4 " ></a>
+                            <a href="#" class="btn float-right"></a>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+
+                        <div class="text-center">
+                            <h5 class="h3">
+                                {{auth()->user()->fname}} {{auth()->user()->lname}}
+                                <span class="font-weight-light">
+                                    @foreach(auth()->user()->roles->pluck('name') as $role)
+                                        -  {{$role}}
+                                    @endforeach
+                                </span>
+                            </h5>
+                            {{--                            <div class="h5 font-weight-300">--}}
+                            {{--                                <i class="ni location_pin mr-2"></i>CSU, Romania--}}
+                            {{--                            </div>--}}
+                            <div class="h5 mt-4">
+                                <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+                            </div>
+                            {{--                            <div>--}}
+                            {{--                                <i class="ni education_hat mr-2"></i>University of Computer Science--}}
+                            {{--                            </div>--}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 order-xl-1">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">My Profile </h3>
+                            </div>
+                            <div class="col-4 text-right">
+                                <a href="/user/{{$user->id}}/edit  " class="btn btn-sm btn-primary">Update</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form >
+                            <h6 class="heading-small text-muted mb-4">User information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-email">Email address</label>
+                                            <input type="email" id="input-email"  value="{{$user->email}}" class="form-control" placeholder="jesse@example.com" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-first-name">First name</label>
+                                            <input type="text" id="input-first-name" class="form-control"  placeholder="First name" value="{{$user->fname}}" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-last-name">Last name</label>
+                                            <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="{{$user->lname}}" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{--                            <hr class="my-4" />--}}
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-city">Address</label>
+                                            <input type="text" id="input-city" class="form-control" placeholder="City" value="{{$user->address}}" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-country">Contact Number</label>
+                                            <input type="number" id="input-country" class="form-control" placeholder="Contact Number" value="{{$user->contact_no}}" readonly>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="form-control-label mr-3" for="input-country">Gender</label>
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input"readonly>
+                                                <label class="custom-control-label" for="customRadioInline1">Male</label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" readonly>
+                                                <label class="custom-control-label" for="customRadioInline2">Female</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4" />
+                            <!-- Description -->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 @endsection

@@ -10,7 +10,7 @@
 {{--            <h3 class="mb-0">Nuevo usuario</h3>--}}
           </div>
           <div class="col-4 text-right">
-            <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">Back to CSU List</a>
+            <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">Back to employee List</a>
           </div>
         </div>
       </div>
