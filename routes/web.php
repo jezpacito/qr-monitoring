@@ -21,6 +21,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 //});\
 
 Route::get('/','GuestController@guest_form_regis');
+//Route::view('login-v2','auth.login-v2');
 
 \Illuminate\Support\Facades\Auth::routes();
 
@@ -39,3 +40,4 @@ Route::view('/registration','guest-register');
 Route::post('/register/guest','GuestController@register')->name('guest');
 
 Route::get('/qrCard','GuestController@download_stream_pdf');
+
