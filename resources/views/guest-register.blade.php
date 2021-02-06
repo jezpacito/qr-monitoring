@@ -97,7 +97,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-last-name">Last name</label>
-                                            <input type="text" id="input-last-name" class="form-control @error('name') is-invalid" placeholder="Last name" value="" name="lname" required>
+                                            <input type="text" id="input-last-name" class="form-control @error('name') is-invalid" @enderror placeholder="Last name" value="" name="lname" required>
                                             @error('lname')
                                             <span class="invalid-feedback" role="alert">
                                                  <strong>{{ $message }}</strong>
@@ -112,7 +112,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="input-address">Address</label>
-                                                <input id="input-address" class="form-control @error('address') is-invalid" placeholder="Home Address" value="" type="text" name="address" required>
+                                                <input id="input-address" class="form-control @error('address') is-invalid" @enderror placeholder="Home Address" value="" type="text" name="address" required>
                                                 @error('address')
                                                 <span class="invalid-feedback" role="alert">
                                                  <strong>{{ $message }}</strong>
@@ -125,7 +125,7 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="input-city">City</label>
-                                                <input type="text" id="input-city" class="form-control @error('city') is-invalid" placeholder="City" value="" name="city" required>
+                                                <input type="text" id="input-city" class="form-control @error('city') is-invalid" @enderror placeholder="City" value="" name="city" required>
                                                 @error('city')
                                                 <span class="invalid-feedback" role="alert">
                                                  <strong>{{ $message }}</strong>
@@ -136,7 +136,7 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="input-country">Prk/Barangay</label>
-                                                <input type="text" id="input-country" class="form-control @error('prk_brgy') is-invalid" placeholder="Prk/Barangay" value="" name="prk_brgy" required>
+                                                <input type="text" id="input-country" class="form-control @error('prk_brgy') is-invalid" @enderror placeholder="Prk/Barangay" value="" name="prk_brgy" required>
                                                 @error('prk_brgy')
                                                 <span class="invalid-feedback" role="alert">
                                                  <strong>{{ $message }}</strong>
@@ -147,7 +147,7 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="input-country">Postal code</label>
-                                                <input type="number" id="input-postal-code" class="form-control @error('postal_code]') is-invalid" placeholder="9500" name="postal_code" required>
+                                                <input type="number" id="input-postal-code" class="form-control @error('postal_code]') is-invalid"@enderror placeholder="9500" name="postal_code" required>
                                                 @error('postal_code')
                                                 <span class="invalid-feedback" role="alert">
                                                  <strong>{{ $message }}</strong>
@@ -173,7 +173,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="form-control-label" for="input-country">Contact Number</label>
-                                                    <input type="number" id="input-country" class="form-control @error('contact-NP') is-invalid" placeholder="Country" value="" name="contact_no" required>
+                                                    <input type="number" id="input-country" class="form-control @error('contact-NP') is-invalid" @enderror placeholder="Country" value="" name="contact_no" required>
                                                     @error('contact_no')
                                                     <span class="invalid-feedback" role="alert">
                                                  <strong>{{ $message }}</strong>
@@ -184,11 +184,11 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="form-control-label" for="input-country">Email Address (optional)</label>
-                                                    <input type="email" id="input-country" class="form-control @error('email') is-invalid" placeholder="Country" value="" name="email" required>
+                                                    <input type="email" id="input-country" class="form-control @error('email') is-invalid" @enderror placeholder="Country" value="" name="email" required>
                                                     @error('email')
                                                     <span class="invalid-feedback" role="alert">
-                                                 <strong>{{ $message }}</strong>
-                                            </span>
+                                                           <strong>{{ $message }}</strong>
+                                                      </span>
                                                     @enderror
                                                 </div>
                                             </div>
