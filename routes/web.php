@@ -36,6 +36,6 @@ Route::view('/profile','profile');
 
 Route::view('/registration','guest-register');
 
-Route::post('/register/guest','GuestController@register');
+Route::post('/register/guest','GuestController@register')->name('guest');
 
 Route::get('/qrCard','GuestController@download_stream_pdf');

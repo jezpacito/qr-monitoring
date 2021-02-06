@@ -78,7 +78,7 @@
                         <p class="card-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate excepturi, quae quidem suscipit tempore veniam veritatis? </p>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="/register/guest">
+                        <form method="post" action="{{route('guest')}}">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Personal information</h6>
                             <div class="pl-lg-4">

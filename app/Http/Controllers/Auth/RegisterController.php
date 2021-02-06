@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Guest;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -12,6 +14,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class RegisterController extends Controller
 {
@@ -97,5 +100,24 @@ class RegisterController extends Controller
         return $request->wantsJson()
             ? new Response('', 201)
             : redirect($this->redirectPath())->withSuccess('added!');
+    }
+
+    public function register_guest(Request $request){
+        $qr_code = mt_rand(100000000000, 999999999999);
+        if(Guest::where('qr_code',$qr_code.'png')->exists()){
+            $qr_code = mt_rand(100000000000, 999999999999);
+        }
+
+        $guest = new Guest($request->all());
+        $guest->qr_code = $qr_code.'.png';
+        $guest->save();
+
+        $qr=  QrCode::size(500)
+            ->format('png')
+            ->generate($qr_code, public_path('QR/'.$qr_code.'.png'));
+
+        $pdf = PDF::loadView('qrCode',compact('guest'))->setPaper('legal','portrait');
+        return $pdf->stream();
+
     }
 }
