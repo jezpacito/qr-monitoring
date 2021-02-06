@@ -33,7 +33,7 @@ class GuestController extends Controller
             ->generate($qr_code, public_path('QR/'.$qr_code.'.png'));
 
         $pdf = PDF::loadView('qrCode',compact('guest'))->setPaper('legal','portrait');
-        return $pdf->stream();
+        return $pdf->download();
 
     }
 

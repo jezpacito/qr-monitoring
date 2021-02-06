@@ -55,5 +55,9 @@ class LoginController extends Controller
             ? new Response('', 204)
             : redirect('/login');
     }
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
 
 }

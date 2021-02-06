@@ -24,7 +24,15 @@ class GuestFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'fname' =>'required',
+            'lname' =>'required',
+            'address'=>'required',
+            'city'=>'required',
+            'prk_brgy'=>'required',
+            'contact_no'=>'required',
+            'gender'=>'required',
+            'postal_code'=>'required',
+            'email'=>'required',
         ];
     }
 }
