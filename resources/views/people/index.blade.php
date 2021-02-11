@@ -17,7 +17,6 @@
                             <th scope="col" class="sort" data-sort="name">Email</th>
                             <th scope="col" class="sort" data-sort="name">Action</th>
 
-
                         </tr>
                         </thead>
                         <tbody class="list">

@@ -29,6 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/user', 'UserController');
 
+
 Route::get('/people', 'UserController@list_people');
 
 Route::get('dataTableUSer', 'UserController@dataTable')->name('dataTableUser');
@@ -38,6 +39,9 @@ Route::view('/profile','profile');
 Route::get('/employee','UserController@employee')->name('user.employee');
 
 Route::get('/admin','UserController@admin');
+
+
+Route::get('/list/registered','GuestController@list_guest');
 
 
 Route::post('/register/guest','GuestController@register')->name('guest');

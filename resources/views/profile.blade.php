@@ -111,13 +111,15 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label class="form-control-label mr-3" for="input-country">Country</label>
+                                            <label class="form-control-label mr-3" for="input-country">Gender</label>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                                <input type="radio" id="customRadioInline1" name="gender"  value="0"
+                                                       class="custom-control-input" {{$user->gender ==0 ? 'checked':''}}>
                                                 <label class="custom-control-label" for="customRadioInline1">Male</label>
                                             </div>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                                <input type="radio" id="customRadioInline2" name="gender" value="1" class="custom-control-input"
+                                                    {{$user->gender ==1 ? 'checked':''}}>
                                                 <label class="custom-control-label" for="customRadioInline2">Female</label>
                                             </div>
                                         </div>
@@ -126,7 +128,6 @@
                             </div>
                             <hr class="my-4" />
                             <!-- Description -->
-
                         </form>
                     </div>
                 </div>

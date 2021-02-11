@@ -117,16 +117,11 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $user = User::findOrFail($id);
-        $input = $request->only('name', 'email');
-        $password = $request->input('password');
-        if($password){
-            $input['password'] = bcrypt($password);
-        }
-        $user->fill($input);
-        // dd($user);
-        $user->save();
-        return redirect()->route('user.index');
+        $user->update($request->all());
+
+        return redirect()->back()->with('success','Updated Successfully');
     }
 
     /**

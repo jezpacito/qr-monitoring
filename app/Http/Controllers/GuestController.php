@@ -15,6 +15,8 @@ class GuestController extends Controller
     {
         $this->middleware('guest');
     }
+
+
     public function guest_form_regis(){
         return view('guest-register');
     }

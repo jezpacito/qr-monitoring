@@ -105,11 +105,15 @@
                                         <div class="form-group">
                                             <label class="form-control-label mr-3" for="input-country">Gender</label>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input"readonly>
+                                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input"
+                                                    {{$user->gender ==0 ? 'checked':''}}
+                                                       disabled>
                                                 <label class="custom-control-label" for="customRadioInline1">Male</label>
                                             </div>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" readonly>
+                                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input"
+                                                       {{$user->gender ==1 ? 'checked':''}}
+                                                       disabled>
                                                 <label class="custom-control-label" for="customRadioInline2">Female</label>
                                             </div>
                                         </div>

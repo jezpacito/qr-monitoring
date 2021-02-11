@@ -1,15 +1,16 @@
 @extends('layouts.table')
+
 @section('content')
     <div class="container-fluid mt--6">
         <div class="row">
             <div class="col-xl-4 order-xl-2">
                 <div class="card card-profile">
-                    <img src="../assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+                    <img src="{{asset("assets/img/theme/img-1-1000x600.jpg")}}" alt="Image placeholder" class="card-img-top">
                     <div class="row justify-content-center">
                         <div class="col-lg-3 order-lg-2">
                             <div class="card-profile-image">
                                 <a href="#">
-                                    <img src="../assets/img/theme/ava.jpg" class="rounded-circle">
+                                    <img src="{{asset("assets/img/theme/ava.jpg")}}" class="rounded-circle">
                                 </a>
                             </div>
                         </div>
@@ -31,33 +32,19 @@
                                     @endforeach
                                 </span>
                             </h5>
-                            {{--                            <div class="h5 font-weight-300">--}}
-                            {{--                                <i class="ni location_pin mr-2"></i>CSU, Romania--}}
-                            {{--                            </div>--}}
                             <div class="h5 mt-4">
                                 <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
                             </div>
-                            {{--                            <div>--}}
-                            {{--                                <i class="ni education_hat mr-2"></i>University of Computer Science--}}
-                            {{--                            </div>--}}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-8 order-xl-1">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="row align-items-center">
-                            <div class="col-8">
-                                <h3 class="mb-0">Edit profile </h3>
-                            </div>
-                            <div class="col-4 text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">Save</a>
-                            </div>
-                        </div>
-                    </div>
                     <div class="card-body">
-                        <form >
+                        <form method="POST" action="/user/{{$user->id}}">
+                            @csrf
+                            <input type="hidden" name="_method" value="PUT">
                             <div class="row align-items-center">
                                 <div class="col-8">
                                     <h3 class="mb-0">Edit profile </h3>
@@ -72,7 +59,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-email">Email address</label>
-                                            <input type="email" id="input-email" class="form-control" placeholder="jesse@example.com">
+                                            <input type="email" id="input-email" class="form-control" name="email" value="{{old('email',$user->email)}}">
                                         </div>
                                     </div>
                                 </div>
@@ -80,13 +67,13 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-first-name">First name</label>
-                                            <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
+                                            <input type="text" id="input-first-name" class="form-control" name="fname" value="{{old('fname',$user->fname)}}" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-last-name">Last name</label>
-                                            <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="Jesse">
+                                            <input type="text" id="input-last-name" class="form-control" name="lname" value="{{old('lname',$user->lname)}}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -97,13 +84,13 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-city">Address</label>
-                                            <input type="text" id="input-city" class="form-control" placeholder="City" value="New York">
+                                            <input type="text" id="input-city" class="form-control" name="address" value="{{old('address',$user->address)}}" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-country">Contact Number</label>
-                                            <input type="number" id="input-country" class="form-control" placeholder="Country" value="United States">
+                                            <input type="number" id="input-country" class="form-control"  name="contact_no" value="{{old('contact_no',$user->contact_no)}}" required>
                                         </div>
                                     </div>
 
@@ -111,13 +98,15 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label class="form-control-label mr-3" for="input-country">Country</label>
+                                            <label class="form-control-label mr-3" for="input-country">Gender</label>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                                <input type="radio" id="customRadioInline1" name="gender"  value="0"
+                                                       class="custom-control-input" {{$user->gender ==0 ? 'checked':''}}>
                                                 <label class="custom-control-label" for="customRadioInline1">Male</label>
                                             </div>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                                <input type="radio" id="customRadioInline2" name="gender" value="1" class="custom-control-input"
+                                                    {{$user->gender ==1 ? 'checked':''}}>
                                                 <label class="custom-control-label" for="customRadioInline2">Female</label>
                                             </div>
                                         </div>

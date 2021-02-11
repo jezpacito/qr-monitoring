@@ -73,9 +73,9 @@
               <span class="nav-link-text">Guest List</span>
           </a>
           <div class="dropdown-menu">
-              <a href="#" class="nav-link">
+              <a href="/people" class="nav-link">
                   <i class="ni ni-single-02 text-yellow"></i>
-                  <span class="nav-link-text">Newly Registered</span>
+                  <span class="nav-link-text">Registered Guest</span>
               </a>
               <a href="#" class="nav-link">
                   <i class="ni ni-single-02 text-yellow"></i>
