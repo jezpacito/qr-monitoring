@@ -1,5 +1,6 @@
 @extends('layouts.table')
 @section('content')
+
     <div class="container-fluid mt--6">
         <div class="row">
             <div class="col-xl-4 order-xl-2">
