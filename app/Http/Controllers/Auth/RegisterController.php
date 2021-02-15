@@ -14,6 +14,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class RegisterController extends Controller
@@ -116,8 +117,10 @@ class RegisterController extends Controller
             ->format('png')
             ->generate($qr_code, public_path('QR/'.$qr_code.'.png'));
 
+        redirect()->back()->with('success','success');
+
         $pdf = PDF::loadView('qrCode',compact('guest'))->setPaper('legal','portrait');
-        return $pdf->stream();
+//        dd($pdf->stream());
 
     }
 }

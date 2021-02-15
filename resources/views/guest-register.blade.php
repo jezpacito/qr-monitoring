@@ -78,7 +78,7 @@
                         <p class="card-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate excepturi, quae quidem suscipit tempore veniam veritatis? </p>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{route('guest')}}">
+                        <form method="post" action="{{route('guest')}}" name="myForm">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Personal information</h6>
                             <div class="pl-lg-4">
@@ -198,8 +198,11 @@
 
                             </div>
                             <hr class="my-4" />
-                            <button type="submit" class="btn btn-default">Submit</button>
+{{--                            <button type="submit" class="btn btn-default">Submit</button>--}}
                             <!-- Description -->
+{{--                            <input type="submit" class="btn btn-default" onclick="myFunction()" value="Submit">--}}
+
+                            <input type="button" value="Submit" class="btn btn-default" id="btnsubmit" onclick="submitForm()">
 
                         </form>
                     </div>
@@ -227,6 +230,23 @@
 <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
 <!-- Argon JS -->
 <script src="../assets/js/argon.js?v=1.2.0"></script>
+
+<script>
+    // function myFunction() {
+    //     document.getElementById("myForm").reset();
+    // }
+    // $('#myForm')[0].reset();
+    function submitForm() {
+        // Get the first form with the name
+        // Usually the form name is not repeated
+        // but duplicate names are possible in HTML
+        // Therefore to work around the issue, enforce the correct index
+        var frm = document.getElementsByName('myForm')[0];
+        frm.submit(); // Submit the form
+        frm.reset();  // Reset all form data
+        return false; // Prevent page refresh
+    }
+</script>
 </body>
 
 </html>
