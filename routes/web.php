@@ -48,6 +48,8 @@ Route::resource('/user', 'UserController');
 
 Route::get('/people', 'UserController@list_people');
 
+Route::get('/guest/show/{guest}', 'UserController@show_guest_profile');
+
 Route::get('dataTableUSer', 'UserController@dataTable')->name('dataTableUser');
 
 Route::view('/profile','profile');

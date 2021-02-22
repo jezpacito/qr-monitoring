@@ -15,7 +15,7 @@
                             <th scope="col" class="sort" data-sort="name">Name</th>
                             <th scope="col" class="sort" data-sort="name">Contact No</th>
                             <th scope="col" class="sort" data-sort="name">Email</th>
-                            <th scope="col" class="sort" data-sort="name">Action</th>
+                            <th class="text-center" >Action</th>
 
                         </tr>
                         </thead>
@@ -40,17 +40,19 @@
                                   </span>
                                 </td>
 
-                                <td class="text-right">
-                                    <div class="dropdown">
-                                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                <td class="text-center">
+                                    <a href="/guest/show/{{$person->id}}" class="btn btn-default btn-sm">View Details</a>
+{{--                                    <div class="dropdown">--}}
+{{--                                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                                            <i class="fas fa-ellipsis-v"></i>--}}
+{{--                                        </a>--}}
+
+{{--                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">--}}
+{{--                                            <a class="dropdown-item" href="#">View Details</a>--}}
+{{--                                            <a class="dropdown-item" href="#">Another action</a>--}}
+{{--                                            <a class="dropdown-item" href="#">Something else here</a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                 </td>
                             </tr>
                         @endforeach

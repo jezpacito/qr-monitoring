@@ -15,8 +15,13 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+    public function show_guest_profile(Guest $guest){
+      return view('people.show',compact('guest'));
+    }
+
     public function list_people(){
-        $people = Guest::paginate(6);
+        $people = Guest::latest()->paginate(6);
 
         return view('people.index',compact('people'));
     }
