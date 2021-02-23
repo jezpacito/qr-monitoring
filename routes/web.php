@@ -62,7 +62,6 @@ Route::get('/list/registered','GuestController@list_guest');
 
 Route::get('/add/admin','UserController@register');
 
-
 Route::post('/register/guest','GuestController@register')->name('guest');
 
 Route::get('/qrCard','GuestController@download_stream_pdf');
