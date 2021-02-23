@@ -61,7 +61,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <label class="form-control-label mr-3" for="input-country">Country</label>
+                                            <label class="form-control-label mr-3" for="input-country">Gender</label>
                                             <div class="custom-control custom-radio custom-control-inline">
                                                 <input type="radio" id="customRadioInline1" name="gender" value="0" class="custom-control-input">
                                                 <label class="custom-control-label" for="customRadioInline1">Male</label>
