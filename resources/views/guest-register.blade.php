@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>CBDTMS</title>
+    <title>CDBTMS</title>
     <!-- Favicon -->
     <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
     <!-- Fonts -->
@@ -124,7 +124,7 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="input-city">City</label>
+                                                <label class="form-control-label" for="input-city">City/Province</label>
                                                 <input type="text" id="input-city" class="form-control @error('city') is-invalid" @enderror placeholder="City" value="" name="city" required>
                                                 @error('city')
                                                 <span class="invalid-feedback" role="alert">
