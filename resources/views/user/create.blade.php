@@ -17,6 +17,7 @@
       <div class="card-body">
         <form action="{{ route('user.store') }}" method="POST">
           @csrf
+
           <h6 class="heading-small text-muted mb-4">CSU Basic Information</h6>
           <div class="pl-lg-4">
             <div class="row">
