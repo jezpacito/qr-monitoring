@@ -6,6 +6,7 @@ use App\Guest;
 use App\Http\Requests\GuestFormRequest;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -29,6 +30,18 @@ class GuestController extends Controller
         $guest = new Guest($request->all());
         $guest->qr_code = $qr_code.'.png';
         $guest->save();
+
+        //send email
+        $to_name = $guest->fname.' '.$guest->lname;
+        $to_email =$guest->email;
+        $data = array('name'=>'Ogbonna Vitalis(sender_name)', 'body' => 'A test mail');
+
+        Mail::send('emails.mail', compact('guest'), function($message) use ($to_name, $to_email) {
+            $message->to($to_email, $to_name)
+                ->subject('CBDTMS QR');
+            $message->from(config('services.gmail.email'),'’Test Mail’');
+        });
+
 
         $qr=  QrCode::size(500)
             ->format('png')

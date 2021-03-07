@@ -66,3 +66,4 @@ Route::post('/register/guest','GuestController@register')->name('guest');
 
 Route::get('/qrCard','GuestController@download_stream_pdf');
 
+Route::get('send/test','SendMailController@send');

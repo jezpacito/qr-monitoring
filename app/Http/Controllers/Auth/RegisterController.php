@@ -108,10 +108,10 @@ class RegisterController extends Controller
         if(Guest::where('qr_code',$qr_code.'png')->exists()){
             $qr_code = mt_rand(100000000000, 999999999999);
         }
-
         $guest = new Guest($request->all());
         $guest->qr_code = $qr_code.'.png';
         $guest->save();
+        
 
         $qr=  QrCode::size(500)
             ->format('png')
