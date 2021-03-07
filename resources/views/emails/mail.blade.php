@@ -9,6 +9,6 @@
 </head>
 <body>
 <h1>You have successfully registered! This is your QR code</h1>
-{{--<img src="{{asset('QR/'.$guest->qr_code)}}" alt="Image placeholder"class="img-thumbnail">--}}
+<img src="{{asset('QR/'.$guest->qr_code)}}" alt="QR Image"class="img-thumbnail">
 </body>
 </html>
