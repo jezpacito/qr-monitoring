@@ -36,6 +36,11 @@ Route::get('/sample-report',function (){
     return $pdf->stream();
 });
 
+
+Route::get('/download',function (){
+
+});
+
 Route::get('/','GuestController@guest_form_regis');
 //Route::view('login-v2','auth.login-v2');
 

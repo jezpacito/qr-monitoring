@@ -8,7 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-<h1>You have successfully registered! This is your QR code</h1>
-<img src="{{asset('QR/'.$guest->qr_code)}}" alt="QR Image"class="img-thumbnail">
+<h1>You have successfully registered! This is your QR code click here to download your qr code</h1>
+{{--<p>{{$guest->fname}}</p>--}}
+{{--<img src="{{$message->embed(public_path('QR'.'/'.$guest->qr_code.'.png'))}}" alt="QR Image"class="img-thumbnail">--}}
 </body>
 </html>

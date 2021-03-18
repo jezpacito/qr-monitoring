@@ -34,14 +34,12 @@ class GuestController extends Controller
         //send email
         $to_name = $guest->fname.' '.$guest->lname;
         $to_email =$guest->email;
-        $data = array('name'=>'Ogbonna Vitalis(sender_name)', 'body' => 'A test mail');
 
         Mail::send('emails.mail', compact('guest'), function($message) use ($to_name, $to_email) {
             $message->to($to_email, $to_name)
                 ->subject('CBDTMS QR');
-            $message->from(config('services.gmail.email'),'’Test Mail’');
+            $message->from(config('services.gmail.email'),'CBDTMS Management');
         });
-
 
         $qr=  QrCode::size(500)
             ->format('png')
