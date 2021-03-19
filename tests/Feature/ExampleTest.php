@@ -19,11 +19,10 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-
         $user = factory(User::class)->create([
             'rfid_uuid' => $this->faker()->uuid .' test'
         ]);
-        $response = $this->get("api/timeIn/rfid/$user->rfid_uuid");
+        $response = $this->get("api/timeIn/rfid/1111");
         $response->dump();
         $this->assertDatabaseHas('attendances',[
             'user_id' => $user->id,

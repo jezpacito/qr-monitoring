@@ -20,6 +20,11 @@ class UserController extends Controller
     public function timeIn($rfid){
 
         $emp = User::where('rfid_uuid',$rfid)->first();
+        if($emp == null){
+            return response()->json([
+                'cant find staff with that uuid'
+            ]);
+        }
         $attendance = Attendance::create([
             'datetime_In' => Carbon::now(),
             'user_id' => $emp->id
