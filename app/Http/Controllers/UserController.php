@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Attendance;
 use App\Guest;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -15,7 +17,19 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function timeIn($rfid){
 
+        $emp = User::where('rfid_uuid',$rfid)->first();
+        $attendance = Attendance::create([
+            'datetime_In' => Carbon::now(),
+            'user_id' => $emp->id
+        ]);
+
+        return response()->json([
+            $attendance,
+            'message' => 'time in success!'
+        ]);
+    }
 
     public function register(){
         return view('user.create-admin');
