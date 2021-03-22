@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->boolean('gender');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('rfid_uuid')->nullable();
+            $table->string('rfid_uuid')->nullable()->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
