@@ -22,7 +22,7 @@ class ExampleTest extends TestCase
         $user = factory(User::class)->create([
             'rfid_uuid' => $this->faker()->uuid .' test'
         ]);
-        $response = $this->post("api/timeIn/rfid/$user->rfid_uuid");
+        $response = $this->get("api/timeIn/rfid/$user->rfid_uuid");
         $response->dump();
         $this->assertDatabaseHas('attendances',[
             'user_id' => $user->id,

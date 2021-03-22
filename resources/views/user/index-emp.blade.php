@@ -19,6 +19,7 @@
                                 {{--                            <th scope="col" class="sort" data-sort="budget"></th>--}}
                                 <th scope="col">Email</th>
                                 <th scope="col" class="sort" data-sort="status">Contact Number</th>
+                                <th scope="col" class="sort" data-sort="status">RFID UUID</th>
                                 <th scope="col" class="sort" data-sort="completion">Action</th>
                                 <th scope="col"></th>
                             </tr>
@@ -46,6 +47,12 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <span class="completion mr-2">{{$user->contact_no}}</span>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <span class="completion mr-2">{{$user->rfid_uuid}}</span>
 
                                         </div>
                                     </td>
