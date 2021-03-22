@@ -17,7 +17,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function timeIn($rfid){
+    public function timeIn($rfid,$temp){
 
         $emp = User::where('rfid_uuid',$rfid)->first();
         if($emp == null){
@@ -27,7 +27,8 @@ class UserController extends Controller
         }
         $attendance = Attendance::create([
             'datetime_In' => Carbon::now(),
-            'user_id' => $emp->id
+            'user_id' => $emp->id,
+            'temperature' =>$temp
         ]);
 
         return response()->json([
@@ -35,6 +36,7 @@ class UserController extends Controller
             'message' => 'time in success!'
         ]);
     }
+
 
     public function register(){
         return view('user.create-admin');

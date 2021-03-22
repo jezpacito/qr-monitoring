@@ -8,7 +8,8 @@ class Attendance extends Model
 {
     protected $fillable = [
         'datetime_In',
-        'user_id'
+        'user_id',
+        'temperature'
     ];
 
     public function employee(){
