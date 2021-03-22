@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//localhost:8000/api/rfid
+
+
+Route::post('/test/rfid',function (){
+//qr number
+    dd(request()->all());
+
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
