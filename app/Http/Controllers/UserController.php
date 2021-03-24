@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Attendance;
 use App\Guest;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -15,6 +17,26 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+    public function timeIn($rfid,$temp){
+
+        $emp = User::where('rfid_uuid',$rfid)->first();
+        if($emp == null){
+            return response()->json([
+                'cant find staff with that uuid'
+            ]);
+        }
+        $attendance = Attendance::create([
+            'datetime_In' => Carbon::now(),
+            'user_id' => $emp->id,
+            'temperature' =>$temp
+        ]);
+
+        return response()->json([
+            $attendance,
+            'message' => 'time in success!'
+        ]);
+    }
 
 
     public function register(){
@@ -45,28 +67,7 @@ class UserController extends Controller
         return view('user.index', compact('users'));
     }
 
-    public function dataTable()
-    {
-        return DataTables::of(User::select('id', 'name', 'email', 'created_at'))
-        ->editColumn('created_at', function(User $user){
-            return $user->created_at->diffForHumans();
-        })
-        // ->addColumn('delete', '<form action="{{route(\'user.destroy\', $id)}}" method="POST">
-        //                     <input type="hidden" name="_method" value="DELETE">
-        //                     <input type="submit" name="submit" value="'.('Eliminar').'" class="btn btn-danger btn-sm"
-        //                     onClick="return confirm(\'¿Seguro?\')">
-        //                     {{csrf_field()}}
-        //                     </form>')
-        // ->addColumn('show', '<a href="{{route(\'user.show\', $id)}}" class="btn btn-info btn-sm">' .('Ver'). '</a>')
-        // ->addColumn('edit', '<a href="{{route(\'user.edit\', $id)}}" class="btn btn-warning btn-sm">' . ('Editar') . '</a>')
 
-        // ->addColumn('show', 'user.dataTable.show')
-        // ->addColumn('edit', 'user.dataTable.edit')
-        // ->addColumn('delete', 'user.dataTable.delete')
-        ->addColumn('btn', 'user.dataTable.btn')
-        ->rawColumns(['btn'])
-        ->toJson();
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -128,7 +129,7 @@ class UserController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
+     *timeIn
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response

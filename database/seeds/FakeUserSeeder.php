@@ -21,6 +21,7 @@ class FakeUserSeeder extends Seeder
             'fname'=>'Juan',
             'email' => 'admin@gmail.com',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'rfid_uuid' => \Illuminate\Support\Str::uuid()
         ]);
         $user->assignRole('admin');
 
@@ -32,6 +33,7 @@ class FakeUserSeeder extends Seeder
             'fname'=>'Jane',
             'email' => 'employee@gmail.com',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'rfid_uuid' => \Illuminate\Support\Str::uuid()
         ]);
         $staff->assignRole('staff');
 

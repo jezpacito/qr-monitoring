@@ -40,6 +40,11 @@ Route::get('/sample-report',function (){
     return $pdf->stream();
 });
 
+
+Route::get('/download',function (){
+
+});
+
 Route::get('/','GuestController@guest_form_regis');
 //Route::view('login-v2','auth.login-v2');
 
@@ -70,3 +75,9 @@ Route::post('/register/guest','GuestController@register')->name('guest');
 
 Route::get('/qrCard','GuestController@download_stream_pdf');
 
+Route::get('send/test','SendMailController@send');
+
+Route::prefix('logs')->group(function (){
+    Route::get('employee','LogsController@employee_logs');
+    Route::get('guest','LogsController@guest_logs');
+});

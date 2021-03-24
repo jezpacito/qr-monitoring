@@ -14,15 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/timeIn/rfid/{rfid}/temperature/{temp}','UserController@timeIn');
 
-//localhost:8000/api/rfid
-
-
-Route::post('/test/rfid',function (){
-//qr number
-    dd(request()->all());
-
-});
+Route::get('/timeIn/qr/{qr}/temperature/{temp}','UserController@timeIn');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
