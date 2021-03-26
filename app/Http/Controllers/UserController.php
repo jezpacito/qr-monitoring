@@ -17,6 +17,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
     public function timeIn($rfid,$temp){
 
         $emp = User::where('rfid_uuid',$rfid)->first();

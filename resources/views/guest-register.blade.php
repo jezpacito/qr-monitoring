@@ -75,7 +75,7 @@
                 <div class="card card-upgrade">
                     <div class="card-header text-center border-bottom-0">
                         <h4 class="card-title">Registration Form</h4>
-                        <p class="card-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate excepturi, quae quidem suscipit tempore veniam veritatis? </p>
+{{--                        <p class="card-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate excepturi, quae quidem suscipit tempore veniam veritatis? </p>--}}
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{route('guest')}}" name="myForm">

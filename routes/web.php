@@ -20,7 +20,11 @@ use Barryvdh\DomPDF\Facade as PDF;
 //    Route::get('/guest/registration','GuestController@guest_form_regis');
 //
 //});\
-
+//localhost:8000/test/temp/body_temp?asasasa
+Route::post('test/temp',function (){
+    dd(request()->all());
+    \App\Temperature::create(['body_temp' =>request()->body_temp]);
+});
 
 
 

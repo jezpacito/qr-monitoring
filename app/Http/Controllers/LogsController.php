@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class LogsController extends Controller
 {
     public function employee_logs(){
-        $users = User::role('admin')->latest()->paginate(10);
-        return view('logs.employee');
+        $users = User::with('attendances')->latest()->get();
+        return view('logs.employee',compact('users'));
     }
     public function guest_logs(){
         return view('logs.guest');
