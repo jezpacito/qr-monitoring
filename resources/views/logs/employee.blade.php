@@ -20,34 +20,38 @@
                         </tr>
                         </thead>
                         <tbody class="list">
-                        @foreach($users as $user)
 
+                     @if(count($users) <= 0)
+                        <h2 class="text-red">NO LOGS CREATED!</h2>
+                     @endif
+                        @foreach($users as $user)
 
                         <tr>
                             <th scope="row">
                                 <div class="media align-items-center">
                                     <div class="media-body">
-                                        <span class="name mb-0 text-sm">{{$user->fname}}  {{$user->lname}}</span>
+                                        <span class="name mb-0 text-sm">{{$user->employee->fname}}  {{$user->employee->lname}}</span>
                                     </div>
                                     <div class="media-body">
-                                        <span class="name mb-0 text-sm">{{$user->attendances()->first()->datetime_In}}</span>
+                                        <span class="name mb-0 text-sm">{{$user->datetime_In}}</span>
                                     </div>
                                 </div>
 
                             </th>
-{{--                            <td class="text-right">--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                                        <i class="fas fa-ellipsis-v"></i>--}}
-{{--                                    </a>--}}
-{{--                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">--}}
-{{--                                        <a class="dropdown-item" href="#">Action</a>--}}
-{{--                                        <a class="dropdown-item" href="#">Another action</a>--}}
-{{--                                        <a class="dropdown-item" href="#">Something else here</a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
+                            <td class="text-right">
+                                <div class="dropdown">
+                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
+
                         @endforeach
 
                         </tbody>
