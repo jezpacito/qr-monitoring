@@ -38,7 +38,6 @@ class UserController extends Controller
         ]);
     }
 
-
     public function register(){
         return view('user.create-admin');
     }
@@ -113,6 +112,11 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         return view('user.show', compact('user'));
+    }
+
+    public function userDetails($id){
+        $user = User::findOrFail($id);
+        return view('user.userShow', compact('user'));
     }
 
     /**

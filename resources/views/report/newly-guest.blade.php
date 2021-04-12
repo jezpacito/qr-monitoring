@@ -71,8 +71,8 @@
 <body>
 
 <div class="header" style="text-align: center">
-    <h1>Responsive Header</h1>
-    <p>Resize the browser window to see the effect.</p>
+    <h1>List Of All Employee Entered</h1>
+    {{-- <p>Resize the browser window to see the effect.</p> --}}
 </div>
 <hr>
 <br>
@@ -86,15 +86,21 @@
 <table>
     <tr>
         <th>Name</th>
-        <th>Lastname</th>
-        <th>Lastname</th>
-        <th>Lastname</th>
+        <th>Address</th>
+        <th>Contact Number</th>
+        <th>RFID UUID</th>
     </tr>
+    @foreach($guests as $g)
     <tr>
-        @foreach($guests as $g)
+    
             <td>{{$g->fname}} {{$g->lname}}</td>
-        @endforeach
+            <td>{{$g->address}}</td>
+            <td>{{$g->contact_no}}</td>
+            <td>{{$g->rfid_uuid}}</td>
+           
     </tr>
+    @endforeach
+
 
 </table>
 </body>

@@ -52,7 +52,8 @@
                                 <h3 class="mb-0">My Profile </h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="/user/{{$user->id}}/edit  " class="btn btn-sm btn-primary">Update</a>
+                                
+                                {{-- <a href="/user/{{$user->id}}/edit  " class="btn btn-sm btn-primary">Update</a> --}}
                             </div>
                         </div>
                     </div>

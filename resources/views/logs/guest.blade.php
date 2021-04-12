@@ -5,7 +5,8 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Light table</h3>
+                    <h3 class="mb-0">Guest Logs</h3>
+                    <a href="/sample-report" class="btn btn-primary m-4">Generate Report</a>
                 </div>
                 <!-- Light table -->
                 <div class="table-responsive">

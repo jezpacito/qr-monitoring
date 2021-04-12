@@ -28,16 +28,8 @@ Route::post('test/temp',function (){
 
 
 
-Route::get('/sample-report',function (){
-    Artisan::call('view:clear');
+Route::get('/sample-report','ReportController@report_all_guest');
 
-    \Illuminate\Support\Facades\Artisan::call('view:clear');
-//    $guests = \App\Guest::where('created_at','>=',\Carbon\Carbon::now()->subDays(30)->toDateString())->get();
-    $guests = \App\Guest::where('created_at','>=',\Carbon\Carbon::now())->get();
-
-    $pdf = PDF::loadView('report.newly-guest',compact('guests'))->setPaper('legal','portrait');
-    return $pdf->stream();
-});
 
 
 Route::get('/download',function (){
@@ -53,6 +45,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/user', 'UserController');
 
+Route::get('/userDetails/{id}','UserController@userDetails');
 
 Route::get('/people', 'UserController@list_people');
 

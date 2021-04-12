@@ -6,7 +6,7 @@
                 <!-- Card header -->
                 <div class="card-header border-0">
                     <h3 class="mb-0">Employee Logs</h3>
-                    <a href="" class="btn btn-primary m-4">Generate Report</a>
+                    <a href="/sample-report" class="btn btn-primary m-4">Generate Report</a>
                 </div>
                 <!-- Light table -->
                 <div class="table-responsive">
@@ -14,7 +14,7 @@
                         <thead class="thead-light">
                         <tr>
                             <th scope="col" class="sort" data-sort="name">Name</th>
-{{--                            <th >Date/Time Entered</th>--}}
+                            <th scope="col" class="sort" data-sort="name" >Date/Time Entered</th>
 {{--                            <th scope="col" class="sort" data-sort="name">Action</th>--}}
                             <th scope="col"></th>
                         </tr>
@@ -32,24 +32,26 @@
                                     <div class="media-body">
                                         <span class="name mb-0 text-sm">{{$user->employee->fname}}  {{$user->employee->lname}}</span>
                                     </div>
+                                </div>
+
+                            </th>
+                            <th scope="row">
+                                <div class="media align-items-center">
                                     <div class="media-body">
                                         <span class="name mb-0 text-sm">{{$user->datetime_In}}</span>
                                     </div>
                                 </div>
 
                             </th>
-                            <td class="text-right">
-                                <div class="dropdown">
-                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                            <th scope="row">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <a class="btn btn-primary" href="/userDetails/{{$user->id}}">View Details</a>
                                     </div>
                                 </div>
-                            </td>
+
+                            </th>
+                            
                         </tr>
 
                         @endforeach
