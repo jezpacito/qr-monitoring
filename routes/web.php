@@ -35,7 +35,6 @@ Route::get('/sample-report',function (){
 //    $guests = \App\Guest::where('created_at','>=',\Carbon\Carbon::now()->subDays(30)->toDateString())->get();
     $guests = \App\Guest::where('created_at','>=',\Carbon\Carbon::now())->get();
 
-    dd($guests);
     $pdf = PDF::loadView('report.newly-guest',compact('guests'))->setPaper('legal','portrait');
     return $pdf->stream();
 });

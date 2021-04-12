@@ -34,14 +34,14 @@ class GuestController extends Controller
         $guest->save();
 
         //send email
-        $to_name = $guest->fname.' '.$guest->lname;
-        $to_email =$guest->email;
+        // $to_name = $guest->fname.' '.$guest->lname;
+        // $to_email =$guest->email;
 
-        Mail::send('emails.mail', compact('guest'), function($message) use ($to_name, $to_email) {
-            $message->to($to_email, $to_name)
-                ->subject('CBDTMS QR');
-            $message->from(config('services.gmail.email'),'CBDTMS Management');
-        });
+        // Mail::send('emails.mail', compact('guest'), function($message) use ($to_name, $to_email) {
+        //     $message->to($to_email, $to_name)
+        //         ->subject('CBDTMS QR');
+        //     $message->from(config('services.gmail.email'),'CBDTMS Management');
+        // });
 
         $qr=  QrCode::size(500)
             ->format('png')
