@@ -16,6 +16,6 @@ class Guest extends Model
         'gender',
         'postal_code',
         'email',
-        'qr_code'
+        'qr_code',
     ];
 }

@@ -12,11 +12,30 @@ use Yajra\DataTables\DataTables;
 class UserController extends Controller
 {
     /**
+     * 
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function timeIn_qr($qr,$temp){
 
+        $guest = Guest::where('qr_code',$qr)->first();
+        if($guest == null){
+            return response()->json([
+                'cant find staff with that qr'
+            ]);
+        }
+        $attendance = Attendance::create([
+            'datetime_In' => Carbon::now(),
+            'user_id' => $guest->id,
+            'temperature' =>$temp
+        ]);
+
+        return response()->json([
+            $attendance,
+            'message' => 'time in success!'
+        ]);
+    }
 
     public function timeIn($rfid,$temp){
 

@@ -25,6 +25,7 @@ class CreateGuestsTable extends Migration
             $table->integer('postal_code');
             $table->string('email');
             $table->string('qr_code');
+            // $table->string('temperature');
             $table->timestamps();
         });
     }
