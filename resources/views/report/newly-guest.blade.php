@@ -90,13 +90,13 @@
         <th>Contact Number</th>
         <th>RFID UUID</th>
     </tr>
-    @foreach($guests as $g)
+    @foreach($empts as $g)
     <tr>
     
-            <td>{{$g->fname}} {{$g->lname}}</td>
-            <td>{{$g->address}}</td>
-            <td>{{$g->contact_no}}</td>
-            <td>{{$g->rfid_uuid}}</td>
+            <td>{{$g->employee->fname}} {{$g->employee->lname}}</td>
+            <td>{{$g->employee->address}}</td>
+            <td>{{$g->employee->contact_no}}</td>
+            <td>{{$g->employee->rfid_uuid}}</td>
            
     </tr>
     @endforeach
