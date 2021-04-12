@@ -17,5 +17,6 @@ class Guest extends Model
         'postal_code',
         'email',
         'qr_code',
+        'qr_number',
     ];
 }

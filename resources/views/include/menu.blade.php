@@ -102,7 +102,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/logs/guest"
-        target="_blank">
+        >
         <i class="ni ni-palette"></i>
         <span class="nav-link-text">Guest Logs</span>
       </a>

@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function timeIn_qr($qr,$temp){
 
-        $guest = Guest::where('qr_code',$qr)->first();
+        $guest = Guest::where('qr_number',$qr)->first();
         if($guest == null){
             return response()->json([
                 'cant find staff with that qr'
@@ -27,7 +27,7 @@ class UserController extends Controller
         }
         $attendance = Attendance::create([
             'datetime_In' => Carbon::now(),
-            'user_id' => $guest->id,
+            'guest_id' => $guest->id,
             'temperature' =>$temp
         ]);
 

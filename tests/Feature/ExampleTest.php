@@ -33,8 +33,10 @@ class ExampleTest extends TestCase
     }
     public function testTimeIn_qr()
     {
+        $qr =$this->faker()->uuid;
         $user = factory(Guest::class)->create([
-            'qr_code' => $this->faker()->uuid .' test'
+            'qr_code' =>  $qr.' test',
+            'qr_number' =>$qr
         ]);
         $response = $this->get("api/timeIn/qr/$user->qr_code/temperature/37.5");
         $response->dump();

@@ -31,6 +31,7 @@ class GuestController extends Controller
 
         $guest = new Guest($request->all());
         $guest->qr_code = $qr_code.'.png';
+        $guest->qr_number = $qr_code;
         $guest->save();
 
         //send email
