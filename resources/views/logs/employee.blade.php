@@ -20,7 +20,6 @@
                         </tr>
                         </thead>
                         <tbody class="list">
-
                      @if(count($users) <= 0)
                         <h2 class="text-red">NO LOGS CREATED!</h2>
                      @endif

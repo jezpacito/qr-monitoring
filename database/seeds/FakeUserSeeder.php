@@ -1,5 +1,6 @@
 <?php
 
+use App\Guest;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -24,6 +25,20 @@ class FakeUserSeeder extends Seeder
             'rfid_uuid' => '123456789'
         ]);
         $user->assignRole('admin');
+
+        $guest = Guest::create([
+            'fname' =>'marie',
+            'lname' =>'Cruz',
+            'address' => 'gensan',
+            'city' =>'gensanssss' ,
+            'prk_brgy' =>'san isidro',
+            'contact_no' =>'12121212',
+            'gender' =>true,
+            'postal_code' =>1234,
+            'email' =>'marie@gmail.com',
+            'qr_code' =>'12345678',
+            'qr_number' =>'12345678',
+        ]);
 
         $staff= \App\User::create([
             'gender' =>1,

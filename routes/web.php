@@ -28,8 +28,8 @@ Route::post('test/temp',function (){
 
 
 
-Route::get('/sample-report','ReportController@report_all_guest');
-
+Route::get('/sample-report','ReportController@report_all_emp');
+Route::get('/report/guest','ReportController@report_all_guest');
 
 
 Route::get('/download',function (){

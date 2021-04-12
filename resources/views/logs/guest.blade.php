@@ -6,7 +6,7 @@
                 <!-- Card header -->
                 <div class="card-header border-0">
                     <h3 class="mb-0">Guest Logs</h3>
-                    <a href="/sample-report" class="btn btn-primary m-4">Generate Report</a>
+                    <a href="/report/guest" class="btn btn-primary m-4">Generate Report</a>
                 </div>
                 <!-- Light table -->
                 <div class="table-responsive">
@@ -22,18 +22,22 @@
                         </tr>
                         </thead>
                         <tbody class="list">
+                            @if(count($guests) <= 0)
+                            <h2 class="text-red">NO LOGS CREATED!</h2>
+                            @else
+                            @endif
+                            @foreach($guests as $guest)
                         <tr>
                             <td class="budget">
-                                $2200 USD
+                               {{$guest->guest->fname}}     {{$guest->guest->lname}}
                             </td>
                             <td class="budget">
-                                $2200 USD
+                                {{$guest->guest->address}}     {{$guest->guest->city}}     {{$guest->guest->prk_brgy}}
                             </td>
                             <td class="budget">
-                                $2200 USD
+                                {{$guest->guest->email}}  
                             </td>
                            
-                            {{--                                three dot action--}}
                             <td class="text-right">
                                 <div class="dropdown">
                                     <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,6 +51,7 @@
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
