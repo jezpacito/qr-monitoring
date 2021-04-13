@@ -11,10 +11,10 @@
           </ol>
         </nav>
       </div>
-      <div class="col-lg-6 col-5 text-right">
+      {{-- <div class="col-lg-6 col-5 text-right">
         <a href="#" class="btn btn-sm btn-neutral">New</a>
         <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-      </div>
+      </div> --}}
     </div>
     <!-- Card stats -->
     <div class="row">
@@ -34,8 +34,8 @@
               </div>
             </div>
             <p class="mt-3 mb-0 text-sm">
-              <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 000</span>
-              <span class="text-nowrap">This Week</span>
+              <span class="text-success mr-2"></span>
+              <span class="text-nowrap"></span>
             </p>
           </div>
         </div>
@@ -56,8 +56,8 @@
               </div>
             </div>
             <p class="mt-3 mb-0 text-sm">
-              <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>000</span>
-              <span class="text-nowrap">This Month</span>
+              {{-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>000</span> --}}
+              {{-- <span class="text-nowrap">This Month</span> --}}
             </p>
           </div>
         </div>
@@ -78,8 +78,8 @@
                         </div>
                     </div>
                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>000</span>
-                        <span class="text-nowrap">This Month</span>
+                        {{-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>000</span> --}}
+                        {{-- <span class="text-nowrap">This Month</span> --}}
                     </p>
                 </div>
             </div>
@@ -100,8 +100,8 @@
               </div>
             </div>
             <p class="mt-3 mb-0 text-sm">
-              <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 000</span>
-              <span class="text-nowrap">This Week</span>
+              {{-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 000</span> --}}
+              {{-- <span class="text-nowrap">This Week</span> --}}
             </p>
           </div>
         </div>
