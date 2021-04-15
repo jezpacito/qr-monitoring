@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-xl-4 order-xl-2">
                 <div class="card card-profile">
-                    <img src="{{asset("assets/img/theme/img-1-1000x600.jpg")}}" alt="Image placeholder" class="card-img-top">
+                    <img src="{{asset("assets/img/theme/")}}" alt="Image placeholder" class="card-img-top">
                     <div class="row justify-content-center">
                         <div class="col-lg-3 order-lg-2">
                             <div class="card-profile-image">
@@ -49,7 +49,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row align-items-center">
-                            <div class="col-8">
+                            <div class="col-10">
                                 <h3 class="mb-0">Edit profile </h3>
                             </div>
                             <div class="col-4 text-right">
