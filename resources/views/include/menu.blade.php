@@ -49,7 +49,7 @@
           </div>
       </li>
       @endrole
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
              aria-expanded="false">
               <i class="ni ni-books text-primary"></i>
@@ -65,7 +65,7 @@
                   <span class="nav-link-text">Weekly Report</span>
               </a>
           </div>
-      </li>
+      </li> -->
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
              aria-expanded="false">
@@ -77,10 +77,10 @@
                   <i class="ni ni-single-02 text-yellow"></i>
                   <span class="nav-link-text">Registered Guest</span>
               </a>
-              <a href="#" class="nav-link">
+              <!-- <a href="#" class="nav-link">
                   <i class="ni ni-single-02 text-yellow"></i>
                   <span class="nav-link-text">Weekly Report</span>
-              </a>
+              </a> -->
           </div>
       </li>
 
