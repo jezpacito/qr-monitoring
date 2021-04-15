@@ -14,9 +14,9 @@
                         <thead class="thead-light">
                         <tr>
                             <th scope="col" class="sort" data-sort="name">Name</th>
-                            <th scope="col" class="sort" data-sort="name">address</th>
-                            <th scope="col" class="sort" data-sort="name">contact_no</th>
-                            <th scope="col" class="sort" data-sort="name">email</th>
+                            <th scope="col" class="sort" data-sort="name">Address</th>
+                            <th scope="col" class="sort" data-sort="name">Contact No</th>
+                            <th scope="col" class="sort" data-sort="name">Date Entered</th>
 
                             <th scope="col"></th>
                         </tr>
@@ -35,10 +35,13 @@
                                 {{$guest->guest->address}}     {{$guest->guest->city}}     {{$guest->guest->prk_brgy}}
                             </td>
                             <td class="budget">
-                                {{$guest->guest->email}}  
+                                {{$guest->guest->contact_no}}  
+                            </td>
+                            <td class="budget">
+                                {{$guest->created_at}}  
                             </td>
                            
-                            <td class="text-right">
+                            <!-- <td class="text-right">
                                 <div class="dropdown">
                                     <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v"></i>
@@ -49,7 +52,7 @@
                                         <a class="dropdown-item" href="#">Something else here</a>
                                     </div>
                                 </div>
-                            </td>
+                            </td> -->
                         </tr>
                         @endforeach
                         </tbody>
