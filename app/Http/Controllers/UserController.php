@@ -17,9 +17,8 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function timeIn_qr($qr,$temp){
+    public function timeIn_qr($qr){
 
-        dd('ss');
         $guest = Guest::where('qr_number',$qr)->first();
         if($guest == null){
             return response()->json([
@@ -29,13 +28,15 @@ class UserController extends Controller
         $attendance = Attendance::create([
             'datetime_In' => Carbon::now(),
             'guest_id' => $guest->id,
-            'temperature' =>$temp
         ]);
 
-        return response()->json([
-            $attendance,
-            'message' => 'time in success!'
-        ]);
+     
+         echo "<script>window.close();</script>";
+
+        // return response()->json([
+        //     $attendance,
+        //     'message' => 'time in success!'
+        // ]);
     }
 
     public function timeIn($rfid,$temp){

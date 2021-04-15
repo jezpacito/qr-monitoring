@@ -24,8 +24,9 @@ class CreateGuestsTable extends Migration
             $table->boolean('gender');
             $table->integer('postal_code');
             $table->string('email');
-            $table->string('qr_code');
-            $table->string('qr_number');
+            $table->string('qr_code'); //for image
+            $table->string('qr_number'); //qr code number 
+            $table->string('qr_uri'); //url embed
             
             // $table->string('temperature');
             $table->timestamps();
