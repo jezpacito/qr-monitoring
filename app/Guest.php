@@ -18,5 +18,6 @@ class Guest extends Model
         'email',
         'qr_code',
         'qr_number',
+        'qr_uri'
     ];
 }

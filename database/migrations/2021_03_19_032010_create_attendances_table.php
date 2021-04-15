@@ -18,7 +18,7 @@ class CreateAttendancesTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('guest_id')->nullable();
             $table->timestamp('datetime_In');
-            $table->string('temperature');
+            $table->string('temperature')->nullable();
             $table->timestamps();
         });
     }

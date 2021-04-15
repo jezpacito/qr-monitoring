@@ -17,5 +17,6 @@ $factory->define(Guest::class, function (Faker $faker) {
         'postal_code' =>1234,
         'email' =>$faker->email,
         'qr_code'=>'1231212qr',
+        
     ];
 });

@@ -38,6 +38,7 @@ class FakeUserSeeder extends Seeder
             'email' =>'marie@gmail.com',
             'qr_code' =>'12345678',
             'qr_number' =>'12345678',
+            'qr_uri' =>'12345678-uri',
         ]);
 
         $staff= \App\User::create([
