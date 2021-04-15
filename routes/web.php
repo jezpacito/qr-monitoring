@@ -27,6 +27,12 @@ Route::post('test/temp',function (){
 });
 
 
+Route::get('scanner',function(){
+    return view('scanner');
+});
+
+
+
 
 Route::get('/sample-report','ReportController@report_all_emp');
 Route::get('/report/guest','ReportController@report_all_guest');

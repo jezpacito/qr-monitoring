@@ -5,7 +5,7 @@
         <div class="col">
             <div class="card bg-default shadow">
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Light table</h3>
+                    <!-- <h3 class="mb-0">Light table</h3> -->
                     <div class="col text-right">
                         <a href="{{ route('user.create') }}" class="btn btn-sm btn-primary">Add CSU</a>
 

@@ -19,6 +19,7 @@ class UserController extends Controller
      */
     public function timeIn_qr($qr,$temp){
 
+        dd('ss');
         $guest = Guest::where('qr_number',$qr)->first();
         if($guest == null){
             return response()->json([

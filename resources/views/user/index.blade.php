@@ -5,7 +5,7 @@
         <div class="col">
             <div class="card bg-default shadow">
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Light table</h3>
+                    <!-- <h3 class="mb-0">Light table</h3> -->
                     <div class="col text-right">
                         <a href="/add/admin" class="btn btn-sm btn-primary">Add Admin</a>
 
