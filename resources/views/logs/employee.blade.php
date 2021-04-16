@@ -14,6 +14,7 @@
                         <thead class="thead-light">
                         <tr>
                             <th scope="col" class="sort" data-sort="name">Name</th>
+                            <th scope="col" class="sort" data-sort="name">Temperature</th>
                             <th scope="col" class="sort" data-sort="name" >Date/Time Entered</th>
 {{--                            <th scope="col" class="sort" data-sort="name">Action</th>--}}
                             <th scope="col"></th>
@@ -30,6 +31,14 @@
                                 <div class="media align-items-center">
                                     <div class="media-body">
                                         <span class="name mb-0 text-sm">{{$user->employee->fname}}  {{$user->employee->lname}}</span>
+                                    </div>
+                                </div>
+
+                            </th>
+                            <th scope="row">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <span class="name mb-0 text-sm">{{$user->temperature}}  </span>
                                     </div>
                                 </div>
 
