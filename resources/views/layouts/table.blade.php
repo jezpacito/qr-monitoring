@@ -22,7 +22,7 @@
 <!-- Sidenav -->
 @include('include.nav-side')
 <!-- Main content -->
-<div class="main-content" id="panel">
+<div class="main-content" id="app">
     <!-- Topnav -->
     <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
         <div class="container-fluid">

@@ -1,6 +1,6 @@
 @extends('layouts.table')
 @section('content')
-    <div class="row">
+    {{-- <div class="row">
         <div class="col">
             <div class="card">
                 <!-- Card header -->
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 
