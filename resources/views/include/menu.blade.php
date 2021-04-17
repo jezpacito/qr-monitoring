@@ -101,7 +101,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/logs/guest"
+      <a class="nav-link" href="/guest-logs"
         >
         <i class="ni ni-palette"></i>
         <span class="nav-link-text">Guest Logs</span>

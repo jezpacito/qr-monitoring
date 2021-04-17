@@ -85,7 +85,7 @@
 
 <table>
     <tr>
-        <th>Namessss</th>
+        <th>Name</th>
         <th>Address</th>
         <th>Contact Number</th>
         <th>QR Number</th>

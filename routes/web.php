@@ -31,8 +31,12 @@ Route::get('scanner',function(){
     return view('scanner');
 });
 
-
-
+//qr scan form
+Route::get('/test',function(){
+    return view('qr.form');
+});
+//record 
+Route::post('qr-log','LogsController@scan_qr');
 
 Route::get('/sample-report','ReportController@report_all_emp');
 Route::get('/report/guest','ReportController@report_all_guest');
@@ -77,5 +81,6 @@ Route::get('send/test','SendMailController@send');
 
 Route::prefix('logs')->group(function (){
     Route::get('employee','LogsController@employee_logs');
-    Route::get('guest','LogsController@guest_logs');
+
 });
+Route::get('/guest-logs','LogsController@guest_logs');
