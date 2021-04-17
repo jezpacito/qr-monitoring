@@ -30,6 +30,15 @@ Route::get('scanned/qr/logs',function(){
       'data'=>  AttendaceResource::collection($guests)
     ]);
 });
+
+Route::get('employees/rfid/logs',function(){
+  $emps = Attendance::where('guest_id',null)->with('employee')
+  ->latest()
+  ->get();
+  return response()->json([
+    'data'=>  AttendaceResource::collection($emps)
+  ]);
+});
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

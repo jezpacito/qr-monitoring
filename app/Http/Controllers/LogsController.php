@@ -29,11 +29,11 @@ class LogsController extends Controller
     public function employee_logs(){
 //        $users = User::with('attendances')->latest()->get();
 
-        $users = Attendance::where('guest_id',null)->with('employee')
-            ->latest()
-            ->get();
+        // $users = Attendance::where('guest_id',null)->with('employee')
+        //     ->latest()
+        //     ->get();
 
-        return view('logs.employee',compact('users'));
+        return view('logs.employee');
     }
     public function guest_logs(){
 

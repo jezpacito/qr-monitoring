@@ -79,8 +79,6 @@ Route::get('/qrCard','GuestController@download_stream_pdf');
 
 Route::get('send/test','SendMailController@send');
 
-Route::prefix('logs')->group(function (){
-    Route::get('employee','LogsController@employee_logs');
 
-});
+Route::get('employee-logs','LogsController@employee_logs');
 Route::get('/guest-logs','LogsController@guest_logs');

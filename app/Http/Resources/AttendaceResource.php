@@ -17,7 +17,9 @@ class AttendaceResource extends JsonResource
         return [
             'id' =>$this->id,
             'datetime_In' =>$this->datetime_In,
-            'guest' =>$this->guest
+            'temperature' =>$this->temperature,
+            'guest' =>$this->guest,
+            'employee' =>$this->employee
         ];
     }
 }
