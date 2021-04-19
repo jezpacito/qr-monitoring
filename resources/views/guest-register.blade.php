@@ -185,7 +185,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="form-control-label" for="input-country">Email Address (optional)</label>
-                                                    <input type="email" id="input-country" class="form-control @error('email') is-invalid" @enderror placeholder="Country" value="" name="email" required>
+                                                    <input type="email" id="input-country" class="form-control @error('email') is-invalid" @enderror placeholder="Email Address" value="" name="email" required>
                                                     @error('email')
                                                     <span class="invalid-feedback" role="alert">
                                                            <strong>{{ $message }}</strong>
