@@ -107,6 +107,14 @@
         <span class="nav-link-text">Guest Logs</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/test"
+        >
+        <i class="ni ni-palette"></i>
+        <span class="nav-link-text">QR SCAN</span>
+      </a>
+    </li>
+    
 {{--    <li class="nav-item">--}}
 {{--      <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html"--}}
 {{--        target="_blank">--}}
