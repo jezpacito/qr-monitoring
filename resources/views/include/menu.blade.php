@@ -26,7 +26,7 @@
 {{--        <span class="nav-link-text">Add Employee</span>--}}
 {{--      </a>--}}
 
-      @role('admin')
+      @role('super_admin')
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
              aria-expanded="false">
@@ -34,14 +34,14 @@
               <span class="nav-link-text">User List</span>
           </a>
           <div class="dropdown-menu">
-              <a href="/admin" class="nav-link">
+              {{-- <a href="/admin" class="nav-link">
                   <i class="ni ni-circle-08 text-yellow"></i>
-                  <span class="nav-link-text">Admin</span>
+                  <span class="nav-link-text">Super Admins</span>
               </a>
               <a href="/employee" class="nav-link">
                   <i class="ni ni-single-02 text-yellow"></i>
-                  <span class="nav-link-text">Employee</span>
-              </a>
+                  <span class="nav-link-text">Admin</span>
+              </a> --}}
               <a href="/user" class="nav-link">
                   <i class="ni ni-single-02 text-yellow"></i>
                   <span class="nav-link-text">All User</span>
@@ -97,7 +97,7 @@
       <a class="nav-link" href="/logs/employee"
     >
         <i class="ni ni-spaceship"></i>
-        <span class="nav-link-text">Employee Logs</span>
+        <span class="nav-link-text">HTC Parkers Logs</span>
       </a>
     </li>
     <li class="nav-item">

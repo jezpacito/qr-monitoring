@@ -19,7 +19,8 @@
                                 {{--                            <th scope="col" class="sort" data-sort="budget"></th>--}}
                                 <th scope="col">Email</th>
                                 <th scope="col" class="sort" data-sort="status">Contact Number</th>
-                                <th scope="col">RFID UUID</th>
+                                <th scope="col" class="sort" data-sort="status">Role</th>
+
                                 <th scope="col" class="sort" data-sort="completion">Action</th>
 
                             </tr>
@@ -52,10 +53,12 @@
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <span class="completion mr-2">{{$user->rfid_uuid}}</span>
-                                        </div>
+                                            <span class="completion mr-2">{{$user->roles->pluck('name')}}</span>
 
+                                        </div>
                                     </td>
+                                    
+                                
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

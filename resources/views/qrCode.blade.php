@@ -46,19 +46,7 @@
 <body>
 
 <div class="card">
-{{--    <img src="/w3images/team2.jpg" alt="John" style="width:100%">--}}
-        <img src="QR/{{$guest->qr_code}}" alt="QR-CODE" style="width: 50%"/>
-{{--    {!! QrCode::size(250)->generate('ItSolutionStuff.com'); !!}--}}
-    <h1>{{$guest->fname}} {{$guest->lname}}</h1>
-    <p class="title">{{$guest->address}}, {{$guest->city}}</p>
-    <p>{{$guest->prk_brgy}}</p>
-{{--    <div style="margin: 24px 0;">--}}
-{{--        <a href="#"><i class="fa fa-dribbble"></i></a>--}}
-{{--        <a href="#"><i class="fa fa-twitter"></i></a>--}}
-{{--        <a href="#"><i class="fa fa-linkedin"></i></a>--}}
-{{--        <a href="#"><i class="fa fa-facebook"></i></a>--}}
-{{--    </div>--}}
-{{--    <p><a href="#" class="btn btn-dark">Download</a></p>--}}
+        <img src="QR/{{$parker->qr_number}}.png" alt="QR-CODE" style="width: 50%"/>
 </div>
 
 </body>

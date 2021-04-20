@@ -27,26 +27,19 @@ class GuestController extends Controller
     
         $qr_code = Str::uuid();
 
-        env('APP_ENV') == 'production'
-        ? $uri = 'https://cdbtms.herokuapp.com/api/timeIn/qr/'.$qr_code
-        : $uri = 'http://localhost:8000/api/timeIn/qr/'.$qr_code;
+        // env('APP_ENV') == 'production'
+        // ? $uri = 'https://cdbtms.herokuapp.com/api/timeIn/qr/'.$qr_code
+        // : $uri = 'http://localhost:8000/api/timeIn/qr/'.$qr_code;
 
-        $guest = new Guest($request->all());
-        $guest->qr_code = $qr_code.'.png';
-        $guest->qr_number = $qr_code;
-        $guest->qr_uri = $uri;
-        $guest->save();
+        // $guest = new Guest($request->all());
+        // $guest->qr_code = $qr_code.'.png';
+        // $guest->qr_number = $qr_code;
+        // $guest->qr_uri = $uri;
+        // $guest->save();
 
-        //send email
-        // $to_name = $guest->fname.' '.$guest->lname;
-        // $to_email =$guest->email;
+        
 
-        // Mail::send('emails.mail', compact('guest'), function($message) use ($to_name, $to_email) {
-        //     $message->to($to_email, $to_name)
-        //         ->subject('CBDTMS QR');
-        //     $message->from(config('services.gmail.email'),'CBDTMS Management');
-        // });
-
+      
         $qr=  QrCode::size(500)
             ->format('png')
             ->generate($guest->qr_uri, public_path('QR/'.$qr_code.'.png'));
