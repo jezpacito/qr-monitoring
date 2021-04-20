@@ -71,7 +71,7 @@
 <body>
 
 <div class="header" style="text-align: center">
-    <h1>List Of All Employee Entered</h1>
+    <h1>List Of All Guest Entered</h1>
     {{-- <p>Resize the browser window to see the effect.</p> --}}
 </div>
 <hr>
@@ -89,14 +89,16 @@
         <th>Address</th>
         <th>Contact Number</th>
         <th>QR Number</th>
+        <th>Date Entered</th>
     </tr>
     @foreach($empts as $g)
     <tr>
     
-            <td>{{$g->guest->fname}} {{$g->guest->lname}}</td>
+            <td>{{strtoupper($g->guest->fname)}} {{strtoupper($g->guest->lname)}}</td>
             <td>{{$g->guest->address}}</td>
             <td>{{$g->guest->contact_no}}</td>
             <td>{{$g->guest->qr_number}}</td>
+            <td>{{$g->created_at}}</td>
            
     </tr>
     @endforeach

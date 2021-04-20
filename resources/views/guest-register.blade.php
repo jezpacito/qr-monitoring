@@ -74,7 +74,7 @@
             <div class="col-md-10 ml-auto mr-auto">
                 <div class="card card-upgrade">
                     <div class="card-header text-center border-bottom-0">
-                        <h4 class="card-title">Registration Form</h4>
+                       <h4 class="card-title">Registration Form</h4>
 {{--                        <p class="card-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate excepturi, quae quidem suscipit tempore veniam veritatis? </p>--}}
                     </div>
                     <div class="card-body">
@@ -83,10 +83,11 @@
                             <h6 class="heading-small text-muted mb-4">Personal information</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
+                                    
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-first-name">First name</label>
-                                            <input type="text" id="input-first-name" class="form-control @error('fname') is-invalid @enderror" placeholder="First name" value="" name="fname" required>
+                                             <input type="text" id="input-first-name" class="form-control @error('fname') is-invalid @enderror" placeholder="First name" value="" name="fname" required>
                                             @error('fname')
                                             <span class="invalid-feedback" role="alert">
                                                  <strong>{{ $message }}</strong>
