@@ -8,13 +8,14 @@
             <div class="card text-center" >
 
                 <div class="card-body">
-                    <lable> Scan Your QR Here</lable>
+                    <lable> Scan your QR</lable>
                     <input type="text" onfocus="this.value=''" class="form-control" name="qr_number" id="my-input"><br>
                 </div>
             </div>
 
 
     </form>
+    <div class="form-status-holder"></div>
 
     <script>
         var timeoutId;
@@ -65,7 +66,7 @@
 
         // This is just so we don't go anywhere
         // and still save if you submit the form
-        $('.contact-form').submit(function(e) {
+        $('.qr-log').submit(function(e) {
             saveToDB();
             e.preventDefault();
         });

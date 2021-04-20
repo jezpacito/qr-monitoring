@@ -16,7 +16,8 @@ class LogsController extends Controller
     public function scan_qr(){
         // dd(request()->qr_number);
 
-        $guest = Guest::where('qr_number',request()->qr_number)->first();        
+      
+        $guest = Guest::where('qr_number',request()->qr_number)->first();       
         $logs = Attendance::create([
             'guest_id' =>$guest->id,
             'datetime_In' => Carbon::now()
