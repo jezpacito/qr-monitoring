@@ -94,7 +94,7 @@
   <!-- Navigation -->
   <ul class="navbar-nav mb-md-3">
     <li class="nav-item">
-      <a class="nav-link" href="/logs/employee"
+      <a class="nav-link" href="/employee-logs"
     >
         <i class="ni ni-spaceship"></i>
         <span class="nav-link-text">Employee Logs</span>
