@@ -94,19 +94,27 @@
   <!-- Navigation -->
   <ul class="navbar-nav mb-md-3">
     <li class="nav-item">
-      <a class="nav-link" href="/logs/employee"
+      <a class="nav-link" href="/employee-logs"
     >
         <i class="ni ni-spaceship"></i>
         <span class="nav-link-text">Employee Logs</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/logs/guest"
+      <a class="nav-link" href="/guest-logs"
         >
         <i class="ni ni-palette"></i>
         <span class="nav-link-text">Guest Logs</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/test"
+        >
+        <i class="ni ni-palette"></i>
+        <span class="nav-link-text">QR SCAN</span>
+      </a>
+    </li>
+    
 {{--    <li class="nav-item">--}}
 {{--      <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html"--}}
 {{--        target="_blank">--}}

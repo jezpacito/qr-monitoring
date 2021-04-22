@@ -1,5 +1,7 @@
 <?php
 
+use App\Attendance;
+use App\Http\Resources\AttendaceResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +21,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/timeIn/rfid/{rfid}/temperature/{temp}','UserController@timeIn');
 
 // Route::get('/timeIn/qr/{qr}/temperature/{temp}','UserController@timeIn_qr');
-Route::get('/timeIn/qr/{qr}/','UserController@timeIn_qr');
+// Route::get('/timeIn/qr/{qr}/','UserController@timeIn_qr');
+Route::get('scanned/qr/logs',function(){
+    $guests = Attendance::where('user_id',null)->with('guest')
+    ->latest()
+    ->get();
+    return response()->json([
+      'data'=>  AttendaceResource::collection($guests)
+    ]);
+});
 
+Route::get('employees/rfid/logs',function(){
+  $emps = Attendance::where('guest_id',null)->with('employee')
+  ->latest()
+  ->get();
+  return response()->json([
+    'data'=>  AttendaceResource::collection($emps)
+  ]);
+});
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

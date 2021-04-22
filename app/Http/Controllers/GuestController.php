@@ -49,7 +49,7 @@ class GuestController extends Controller
 
         $qr=  QrCode::size(500)
             ->format('png')
-            ->generate($guest->qr_uri, public_path('QR/'.$qr_code.'.png'));
+            ->generate($guest->qr_number, public_path('QR/'.$qr_code.'.png'));
 
         $pdf = PDF::loadView('qrCode',compact('guest'))->setPaper('legal','portrait');
         return $pdf->download();
