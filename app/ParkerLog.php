@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class ParkerLog extends Model
 {
     protected $fillable = [
-        'parker_id',
-        'dateTime_in',
-        'dateTime_out'
+        'user_id',
+        'qr_number',
+        'exit_dateTime',
     ];
 
-    public function parker(){
-        return $this->belongsTo(Parkers::class);
+    //user is the current outpostman logged in 
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

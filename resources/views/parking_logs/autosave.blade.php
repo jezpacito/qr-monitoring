@@ -8,31 +8,17 @@
             <div class="card text-center" >
 
                 <div class="card-body">
-                    <lable> TAP YOUR QR HERE</lable>
-                    <input type="text" onfocus="this.value=''" class="form-control" name="card_id" id="my-input"><br>
+                    
+                    <label> SCAN YOUR QR HERE</label>
+                    <input type="text" onfocus="this.value=''" class="form-control" name="qr_number" id="my-input"><br>
                 </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="bike" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                  Motor
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="motor">
-                <label class="form-check-label" for="exampleRadios2">
-                  Bike
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="vechile" >
-                <label class="form-check-label" for="exampleRadios3">
-                  Four Wheels
-                </label>
-              </div>
+            
 
     </form>
-    <div class="form-status-holder"></div>
+    <div class="form-status-holder">
+        <a href="/home" class="btn btn-primary mt-2"> Back To Dashboard</a>
+    </div>
 
     <script>
         var timeoutId;
@@ -54,10 +40,10 @@
                 data: form.serialize(), // serializes the form's elements.
                 beforeSend: function(xhr) {
                     // Let them know we are saving
-                    var status= 'saving';
+                    var status= 'scanning';
                    var th= $('.form-status-holder').html(status);
                    window.onerror = function () {
-                       alert("rfid card does not exist!");
+                       alert("Qr Code does not exist!");
                    }
                 },
                 success: function(data) {
@@ -66,7 +52,7 @@
                     //this will clear input after sending data to server
                     $('input[type="text"],textarea').val('');
                     var d = new Date();
-                    $('.form-status-holder').html('Saved! Last: ' + d.toLocaleTimeString());
+                    $('.form-status-holder').html('Scanned! Last: ' + d.toLocaleTimeString());
                 },
             });
         }

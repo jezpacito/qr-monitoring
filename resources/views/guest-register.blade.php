@@ -28,9 +28,9 @@
     @include('sweetalert::alert')
     <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
         <div class="container-fluid">
-            <a href="/login" class="btn btn-sm btn-dark" data-toggle="tooltip" data-placement="top" title="Only CSU Employee are allowed to login">
+            {{-- <a href="/login" class="btn btn-sm btn-dark" data-toggle="tooltip" data-placement="top" title="Only CSU Employee are allowed to login">
                 Login
-            </a>
+            </a> --}}
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav align-items-center  ml-md-auto ">
@@ -86,9 +86,19 @@
                                     
                                     <div class="col-lg-10">
                                         <div class="form-group">
-                                            <label class="form-control-label" for="input-first-name">School ID</label>
-                                             <input type="number" id="input-first-name" class="form-control @error('school_id') is-invalid @enderror" placeholder="School ID" value="" name="school_id" required>
-                                            @error('school_id')
+                                            <label class="form-control-label" for="input-first-name">Plate Number</label>
+                                             <input type="text" id="input-first-name" class="form-control @error('plate_number') is-invalid @enderror" placeholder="Plate Number"  name="plate_number" required>
+                                            @error('value=""')
+                                            <span class="invalid-feedback" role="alert">
+                                                 <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-first-name">Contact Number</label>
+                                             <input type="text" id="input-first-name" class="form-control @error('contact_no') is-invalid @enderror" placeholder="Contact Number"  name="contact_no" required>
+                                            @error('contact_no')
                                             <span class="invalid-feedback" role="alert">
                                                  <strong>{{ $message }}</strong>
                                             </span>
@@ -118,6 +128,8 @@
                             <input type="button" value="Submit" class="btn btn-default" id="btnsubmit" onclick="submitForm()">
 
                         </form>
+
+                        <a href="/home" class="btn btn-default mt-2"> Back to HomePage </a>
                     </div>
                 </div>
             </div>

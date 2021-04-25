@@ -12,11 +12,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Str;
 class GuestController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
+   
 
 
 

@@ -42,10 +42,12 @@ Route::get('/download',function (){
 
 });
 
-Route::get('/','GuestController@guest_form_regis');
 //Route::view('login-v2','auth.login-v2');
 
 \Illuminate\Support\Facades\Auth::routes();
+
+Route::middleware('auth')->group(function () {
+    Route::get('register/driver','GuestController@guest_form_regis');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -78,15 +80,19 @@ Route::get('send/test','SendMailController@send');
 //new route
 Route::post('/register/parker','ParkerController@register')->name('parker');
 
+Route::get('/parker/logs',function(){
+    return view('parking_logs.index');
+});
+
 Route::get('scanner-test', function (){
     return view('parking_logs.autosave');
 });
 
-Route::post('contact-form',function(){
-    dd(request()->all());
-});
+Route::post('contact-form','ParkerController@scan_qr');
 
 Route::prefix('logs')->group(function (){
     Route::get('employee','LogsController@employee_logs');
     Route::get('guest','LogsController@guest_logs');
+});
+
 });

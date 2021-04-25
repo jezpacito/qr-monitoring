@@ -4,8 +4,8 @@
         <div class="sidenav-header  align-items-center">
             <a class="navbar-brand" href="javascript:void(0)">
 {{--                <img src="{{ asset('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">--}}
-                <h3>GenSan</h3>
-                <h3>MonitoringSystem</h3>
+                <h3>Parking System</h3>
+                <h3>QR Based</h3>
             </a>
         </div>
         <div class="navbar-inner">

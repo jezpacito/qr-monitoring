@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Parkers extends Model
 {
     protected $fillable = [
-        'school_id',
-        // 'plate_number',
-        // 'vehicle_type',
+        'plate_number',
+        'contact_no',
         'qr_number'
     ];
 }

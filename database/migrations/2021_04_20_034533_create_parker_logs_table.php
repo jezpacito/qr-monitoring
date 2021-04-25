@@ -15,9 +15,9 @@ class CreateParkerLogsTable extends Migration
     {
         Schema::create('parker_logs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('parker_id');
-            $table->dateTime('dateTime_in')->nullable();
-            $table->dateTime('dateTime_out')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->string('qr_number')->nullable();
+            $table->dateTime('exit_dateTime')->nullable();
             $table->timestamps();
         });
     }

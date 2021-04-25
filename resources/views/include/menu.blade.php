@@ -95,17 +95,24 @@
   <!-- Navigation -->
   <ul class="navbar-nav mb-md-3">
     <li class="nav-item">
-      <a class="nav-link" href="/logs/employee"
-    >
+      <a class="nav-link" href="/parker/logs"
+        >
         <i class="ni ni-spaceship"></i>
-        <span class="nav-link-text">HTC Parkers Logs</span>
+        <span class="nav-link-text">Parker's Log</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/logs/guest"
+      <a class="nav-link" href="/register/driver"
+        >
+        <i class="ni ni-spaceship"></i>
+        <span class="nav-link-text">Register Driver</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/scanner-test"
         >
         <i class="ni ni-palette"></i>
-        <span class="nav-link-text">Guest Logs</span>
+        <span class="nav-link-text">QR Scanner Form</span>
       </a>
     </li>
 {{--    <li class="nav-item">--}}

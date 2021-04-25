@@ -16,9 +16,8 @@ class CreateParkersTable extends Migration
  
         Schema::create('parkers', function (Blueprint $table) {
             $table->id();
-            $table->string('school_id');
-            //$table->unsignedSmallInteger('plate_number');
-            // $table->string('vehicle_type');
+            $table->string('plate_number');
+            $table->string('contact_no');
             $table->string('qr_number');
             $table->timestamps();
         });
