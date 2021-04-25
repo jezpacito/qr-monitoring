@@ -1,5 +1,6 @@
 <?php
 
+use App\ParkerLog;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -81,7 +82,9 @@ Route::get('send/test','SendMailController@send');
 Route::post('/register/parker','ParkerController@register')->name('parker');
 
 Route::get('/parker/logs',function(){
-    return view('parking_logs.index');
+    $logs = ParkerLog::with('user')->latest()->get();
+    
+    return view('parking_logs.index',compact('logs'));
 });
 
 Route::get('scanner-test', function (){

@@ -22,24 +22,27 @@
                      </thead>
                      <tbody class="list">
                      <tr>
-                        <td>
+                         @foreach ($logs as $log)
+                         <td>
                             <span class="badge badge-dot mr-4">
                                 <i class="bg-success"></i>
-                                <span class="status">completed</span>
+                                <span class="status">{{ $log->user->fname }} {{ $log->user->lname }}</span>
                             </span>
                          </td>
                          <td class="budget">
-                             $2200 USD
+                          xy-012212
                          </td>
                        
                          <td class="budget">
-                            $2200 USD
+                            {{ $log->created_at }}
                         </td>
                       
                         <td class="budget">
-                            $2200 USD
+                            {{ $log->exit_dateTime }}
                         </td>
                       
+                         @endforeach
+                       
 
                          
                          {{--                                three dot action--}}
