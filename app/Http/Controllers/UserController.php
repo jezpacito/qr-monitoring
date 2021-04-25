@@ -111,15 +111,15 @@ class UserController extends Controller
         $input = $request->all();
         $input['password'] = bcrypt($request->password);
         $user = User::create($input);
-        if ($request->admin =='admin')
-        {
-            $user->assignRole('admin');
-            return redirect()->back()->with('success', 'Admin Created Successfully!');
+        // if ($request->outpostman =='outpost_man')
+        // {
+            $user->assignRole('outpost_man');
+            return redirect()->route('user.index')->with('success', 'OutPost Man Created Successfully!');
 
-        }else{
-            $user->assignRole('staff');
-            return redirect()->route('user.employee')->with('success', 'Created Successfully!');
-        }
+        // }else{
+        //     $user->assignRole('staff');
+        //     return redirect()->route('user.employee')->with('success', 'Created Successfully!');
+        // }
 
     }
 

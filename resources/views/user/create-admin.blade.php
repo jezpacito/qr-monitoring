@@ -10,7 +10,7 @@
                             {{--            <h3 class="mb-0">Nuevo usuario</h3>--}}
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">Back to employee List</a>
+                            <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">Back User List</a>
                         </div>
                     </div>
                 </div>
@@ -57,12 +57,7 @@
                                         <input type="password" id="" name="password" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="password">RFID UUID</label>
-                                        <input type="text" id="" name="rfid_uuid" class="form-control">
-                                    </div>
-                                </div>
+                            
 
                                 <div class="col-lg-6">
                                     <div class="form-group">
@@ -76,7 +71,7 @@
                                                 <input type="radio" id="customRadioInline2" name="gender" value="1" class="custom-control-input">
                                                 <label class="custom-control-label" for="customRadioInline2">Female</label>
                                             </div>
-                                            <input type="hidden" value="admin" name="admin">
+                                            <input type="hidden" value="outpost_man" name="role">
                                         </div>
                                     </div>
                                 </div>

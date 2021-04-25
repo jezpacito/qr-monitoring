@@ -74,7 +74,7 @@
             <div class="col-md-10 ml-auto mr-auto">
                 <div class="card card-upgrade">
                     <div class="card-header text-center border-bottom-0">
-                       <h4 class="card-title">Registrater Driver</h4>
+                       <h4 class="card-title">Register Driver</h4>
 {{--                        <p class="card-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate excepturi, quae quidem suscipit tempore veniam veritatis? </p>--}}
                     </div>
                     <div class="card-body">

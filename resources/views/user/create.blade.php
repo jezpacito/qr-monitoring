@@ -59,12 +59,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label" for="password">RFID UUID</label>
-                        <input type="text" id="" name="rfid_uuid" class="form-control">
-                    </div>
-                </div>
+         
 
                 <div class="col-lg-6">
                     <div class="form-group">
